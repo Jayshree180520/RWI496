@@ -1,0 +1,197 @@
+package com.company.AccessModifier;
+
+public class Java {
+    /*
+    Access Modifiers in Java
+Access modifiers in Java determine the visibility or accessibility of classes, methods, and variables. There are four main access modifiers
+1. **Public**
+2. **Private**
+3. **Protected**
+4. **Default** (no keyword)
+## 1. Public
+- **What it does:** When you use `public`, the code is accessible from anywhere, both inside and outside the class and package.
+- **Example:**
+  ```java
+  public class Example {
+      public int number;
+
+      public void display() {
+          System.out.println("Number: " + number);
+      }
+  }
+
+  public class Test {
+      public static void main(String[] args) {
+          Example obj = new Example();
+          obj.number = 10; // Accessible because it's public
+          obj.display();   // Accessible because it's public
+      }
+  }
+      // Public access modifier
+public class PublicExample {
+    public int publicNumber;
+
+    public void publicMethod() {
+        System.out.println("This is a public method.");
+    }
+}
+## 2. Private
+
+- **What it does:** When you use `private`, the code is only accessible within the same class.
+- **Example:**
+  ```java
+  public class Example {
+      private int number;
+
+      private void display() {
+          System.out.println("Number: " + number);
+      }
+
+      public void setNumber(int num) {
+          number = num;
+          display(); // Can access private method within the class
+      }
+  }
+
+  public class Test {
+      public static void main(String[] args) {
+          Example obj = new Example();
+          // obj.number = 10; // Not accessible because it's private
+          // obj.display();   // Not accessible because it's private
+          obj.setNumber(10); // Accessible because setNumber is public
+      }
+  }
+      // Private access modifier
+class PrivateExample {
+    private int privateNumber;
+
+    private void privateMethod() {
+        System.out.println("This is a private method.");
+    }
+
+    public void accessPrivate() {
+        privateNumber = 10; // Accessible within the same class
+        privateMethod();   // Accessible within the same class
+    }
+}
+## 3. Protected
+
+- **What it does:** When you use `protected`, the code is accessible within the same package and by subclasses (even if they are in different packages).
+- **Example:**
+
+```java
+public class Example {
+    protected int number;
+
+    protected void display() {
+        System.out.println("Number: " + number);
+    }
+}
+
+// In another class in the same package
+public class Test {
+    public static void main(String[] args) {
+        Example obj = new Example();
+        obj.number = 10; // Accessible because it's in the same package
+        obj.display();   // Accessible because it's in the same package
+    }
+}
+
+// In a subclass in a different package
+package another;
+
+import Example;
+
+public class SubExample extends Example {
+    public void show() {
+        number = 10; // Accessible because SubExample is a subclass
+        display();   // Accessible because SubExample is a subclass
+    }
+}
+     // Protected access modifier
+class ProtectedExample {
+    protected int protectedNumber;
+
+    protected void protectedMethod() {
+        System.out.println("This is a protected method.");
+    }
+}
+## 4. Default (Package-Private)
+
+- **What it does:** When you don't specify any access modifier, the code is accessible only within the same package.
+- **Example:**
+  ```java
+  class Example {
+      int number;
+
+      void display() {
+          System.out.println("Number: " + number);
+      }
+  }
+
+  public class Test {
+      public static void main(String[] args) {
+          Example obj = new Example();
+          obj.number = 10; // Accessible because it's in the same package
+          obj.display();   // Accessible because it's in the same package
+      }
+  }
+     // Default (Package-Private) access modifier
+class DefaultExample {
+    int defaultNumber;
+
+    void defaultMethod() {
+        System.out.println("This is a default method.");
+    }
+}
+## Summary
+
+- **Public:** Accessible from anywhere.
+- **Private:** Accessible only within the same class.
+- **Protected:** Accessible within the same package and subclasses.
+- **Default (no modifier):** Accessible only within the same package.
+
+By using these access modifiers, you can control the visibility and accessibility of your classes,
+ methods, and variables, ensuring that your code is encapsulated and protected as needed.
+
+
+ # Types of Memory in Java
+
+## Stack Memory
+
+- **What it is:** This is where Java stores method calls and local variables (variables declared inside a method).
+- **Why it's used:** Stack memory is used to keep track of the point to return to after a method finishes execution
+ and to store variables that are only needed inside that method.
+- **Example:** When you call a method, a "stack frame" is created to hold its local variables and the method's
+ execution state. Once the method completes, this frame is removed.
+
+## Heap Memory
+
+- **What it is:** This is where Java stores objects created with the `new` keyword and their instance variables.
+- **Why it's used:** Heap memory is used for dynamic memory allocation, meaning objects that need to persist
+beyond the execution of a single method are stored here.
+- **Example:** If you create an object like `Car myCar = new Car();`, the `Car` object is stored in heap memory.
+
+## Method Area (or Metaspace in modern Java)
+
+- **What it is:** This is a part of the heap where class definitions, static variables, and constants are stored.
+- **Why it's used:** The method area is used to store data that is shared among all instances of a class, such as
+ static variables and methods.
+- **Example:** If a class `Vehicle` has a static variable `maxSpeed`, this variable is stored in the method area.
+
+## PC (Program Counter) Register
+
+- **What it is:** Each thread in Java has its own PC register, which keeps track of the next instruction to execute.
+- **Why it's used:** The PC register helps the JVM keep track of where each thread is in its execution sequence.
+- **Example:** If a thread is executing a loop, the PC register helps it know which iteration of the loop it's currently on.
+
+## Native Method Stack
+
+- **What it is:** This memory area is used to support native methods (methods written in languages other than
+ Java, like C or C++).
+- **Why it's used:** Native methods can interact with the underlying system in ways that Java itself cannot,
+so this stack is used to handle these operations.
+- **Example:** If a Java program calls a C function using JNI (Java Native Interface), the native method stack is used.
+
+     */
+}
