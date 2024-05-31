@@ -12,6 +12,7 @@ package com;
 	//         v) If a class contain partial implementation then we should declare a class as abstract.
 	
 	        // Abstract class program
+/*
 	abstract class animal
 	{
 		animal()
@@ -51,7 +52,42 @@ package com;
 		}
 	
 }
-	
+	*/
+//      More Example:-
+
+  abstract class vechicle{
+	  abstract void start();
+  }
+  class car extends vechicle{
+
+	@Override
+	void start() {
+		System.out.println("car start with key and drive");	
+	}  
+  }
+  class Bike extends vechicle{
+
+	@Override
+	void start() {
+		System.out.println("Bike start with kick");	
+	}
+  }
+  public class Abstraction {
+		
+		public static void main(String[] args){
+         car c = new car();
+         c.start();
+         Bike b = new Bike();
+         b.start();
+		}
+  }
+
+
+
+
+
+
+
 
 
 
