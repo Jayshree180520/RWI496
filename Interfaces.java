@@ -9,7 +9,7 @@ package com;
 	    //          iv) Interface nothing but deals between client and developer
 	
 	      // Interfaces codes
-	
+/*	
 interface Bicycle{
     int a = 45;
     void applyBrake(int decrement);
@@ -34,10 +34,10 @@ class AvonCycle implements Bicycle, HornBicycle{
         System.out.println("Applying SpeedUP");
     }
     public void blowHornK3g(){
-        System.out.println("Kabhi khushi kabhi gum pee pee pee pee");
+        System.out.println("Kabhi khushi kabhi gum ");
     }
     public void blowHornmhn(){
-        System.out.println("Main hoon naa po po po po");
+        System.out.println("Main hoon naa ");
     }
 }
 public class Interfaces {
@@ -56,3 +56,47 @@ public class Interfaces {
         cycleHarry.blowHornmhn();
     }
 }
+*/
+//              OR
+
+
+//Interface
+interface Animal {
+public void animalSound(); // interface method (does not have a body)
+public void sleep(); // interface method (does not have a body)
+}
+
+//Pig "implements" the Animal interface
+class Pig implements Animal {
+public void animalSound() {
+ // The body of animalSound() is provided here
+ System.out.println("The pig says: wee wee");
+}
+public void sleep() {
+ // The body of sleep() is provided here
+ System.out.println("Zzz");
+}
+}
+
+class Interfaces {
+public static void main(String[] args) {
+ Pig myPig = new Pig();  // Create a Pig object
+ myPig.animalSound();
+ myPig.sleep();
+}
+}
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
